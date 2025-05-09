@@ -1,27 +1,25 @@
-import { Toaster } from "@/components/ui/toaster";
-import { Toaster as Sonner } from "@/components/ui/sonner";
-import { TooltipProvider } from "@/components/ui/tooltip";
-import { QueryClient, QueryClientProvider } from "@tanstack/react-query";
-import { BrowserRouter, Routes, Route } from "react-router-dom";
-import Index from "./pages/Index";
-import NotFound from "./pages/NotFound";
+import { Routes, Route } from 'react-router-dom';
+import { BookingProvider } from "@/components/booking-provider"
+import Home from "@/pages/homepage"
+import HotelSelectDatePage from "@/pages/select-date"
+import HotelDetailPage from '@/pages/hotel-rooms'
+import BookingPage from '@/pages/booking'
 
-const queryClient = new QueryClient();
-
-const App = () => (
-  <QueryClientProvider client={queryClient}>
-    <TooltipProvider>
-      <Toaster />
-      <Sonner />
-      <BrowserRouter>
+function App() {
+  return (
+    <div className="flex justify-center min-h-screen bg-gray-100">
+      <div className="w-full bg-white shadow-lg min-h-screen relative overflow-hidden">
+        <BookingProvider>
         <Routes>
-          <Route path="/" element={<Index />} />
-          {/* ADD ALL CUSTOM ROUTES ABOVE THE CATCH-ALL "*" ROUTE */}
-          <Route path="*" element={<NotFound />} />
+          <Route path="/" element={<Home />} />
+          <Route path="/select-date" element={<HotelSelectDatePage />} />
+          <Route path="/hotel-rooms" element={<HotelDetailPage />} />
+          <Route path="/booking" element={<BookingPage />} />
         </Routes>
-      </BrowserRouter>
-    </TooltipProvider>
-  </QueryClientProvider>
-);
+        </BookingProvider>
+      </div>
+    </div>
+  );
+}
 
 export default App;
