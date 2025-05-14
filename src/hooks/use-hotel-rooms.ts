@@ -135,7 +135,7 @@ export function useHotelRooms(searchParams: URLSearchParams) {
   useEffect(() => {
     console.log("debug", {
       checkin: selectedDates?.checkIn,
-      checkout: selectedDats?.checkOut,
+      checkout: selectedDates?.checkOut,
       hotelId,
       selectedCity,
       selectedDates,
