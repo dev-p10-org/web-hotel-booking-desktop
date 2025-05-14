@@ -1,6 +1,6 @@
 "use client"
 
-import { useNavigate, useSearchParams } from "react-router-dom"
+import { useNavigate, useSearchParams, useLocation } from "react-router-dom"
 import { NavigationMenu } from "@/components/navigation-menu"
 import { Button } from "@/components/ui/button"
 import { Card } from "@/components/ui/card"
@@ -60,7 +60,11 @@ const StarRating = ({ rating }: { rating: number }) => {
 
 export default function HotelDetailPage() {
 
- 
+  // debug
+  const location = useLocation()
+  useEffect(() => {
+    console.log("url", location.pathname+location.search)
+  },[location])
 
   const navigate = useNavigate()
   const [searchParams] = useSearchParams()
