@@ -133,18 +133,6 @@ export function useHotelRooms(searchParams: URLSearchParams) {
 
   // Process URL parameters only once
   useEffect(() => {
-    console.log("debug", {
-      checkin: selectedDates?.checkIn,
-      checkout: selectedDates?.checkOut,
-      hotelId,
-      selectedCity,
-      selectedDates,
-      selectedHotel,
-      searchParams,
-      paramsProcessed,
-      setSelectedRooms,
-    })
-    
     if (paramsProcessed) return
 
     let shouldRedirect = false
@@ -153,9 +141,6 @@ export function useHotelRooms(searchParams: URLSearchParams) {
     // Check if we need to update dates from URL
     const checkinParam = searchParams.get("checkin")
     const checkoutParam = searchParams.get("checkout")
-
-    console.log("cin", checkinParam)
-    console.log("cout", checkoutParam)
 
     if (checkinParam && checkoutParam) {
       try {
