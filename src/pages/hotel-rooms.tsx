@@ -96,6 +96,10 @@ export default function HotelDetailPage() {
     }
   }
 
+  useEffect(() => {
+    console.log(hotel)
+  },[hotel])
+
   if (!hotel) {
     return <HotelRoomsLoading />
   }
