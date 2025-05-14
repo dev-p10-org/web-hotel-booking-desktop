@@ -134,16 +134,15 @@ export function useHotelRooms(searchParams: URLSearchParams) {
   // Process URL parameters only once
   useEffect(() => {
     console.log("debug", {
-    hotelId,
-    selectedCity,
-    selectedDates,
-    selectedHotel,
-    searchParams,
-    setSelectedCity,
-    setSelectedDates,
-    setSelectedHotel,
-    paramsProcessed,
-    setSelectedRooms,
+      checkin: selectedDates?.checkIn,
+      checkout: selectedDats?.checkOut,
+      hotelId,
+      selectedCity,
+      selectedDates,
+      selectedHotel,
+      searchParams,
+      paramsProcessed,
+      setSelectedRooms,
     })
     
     if (paramsProcessed) return
