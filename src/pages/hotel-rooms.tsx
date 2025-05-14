@@ -26,7 +26,7 @@ import { Tooltip, TooltipProvider, TooltipTrigger } from "@/components/ui/toolti
 import { getCleanImageUrl, getRoomImageUrl } from "@/components/image-utils"
 import { useHotelRooms, formatIDR } from "@/hooks/use-hotel-rooms"
 import { HotelRoomsLoading } from "@/components/skeleton-hotel-rooms"
-import { useState } from "react"
+import { useState, useEffect } from "react"
 
 // Helper function to get amenity icon
 const getAmenityIcon = (amenity: string) => {
