@@ -154,6 +154,9 @@ export function useHotelRooms(searchParams: URLSearchParams) {
     const checkinParam = searchParams.get("checkin")
     const checkoutParam = searchParams.get("checkout")
 
+    console.log("cin", checkinParam)
+    console.log("cout", checkoutParam)
+
     if (checkinParam && checkoutParam) {
       try {
         const checkIn = new Date(checkinParam)
