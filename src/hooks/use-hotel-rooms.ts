@@ -133,7 +133,7 @@ export function useHotelRooms(searchParams: URLSearchParams) {
 
   // Process URL parameters only once
   useEffect(() => {
-    console.log(debug, {
+    console.log("debug", {
     hotelId,
     selectedCity,
     selectedDates,
