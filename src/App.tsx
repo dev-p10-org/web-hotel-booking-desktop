@@ -1,5 +1,6 @@
 import { Routes, Route } from 'react-router-dom';
 import { BookingProvider } from "@/components/booking-provider"
+import { ScrollToTop } from "@/components/scroll-to-top"
 import Home from "@/pages/homepage"
 import HotelSelectDatePage from "@/pages/select-date"
 import HotelDetailPage from '@/pages/hotel-rooms'
@@ -10,6 +11,7 @@ function App() {
     <div className="flex justify-center min-h-screen bg-gray-100">
       <div className="w-full bg-white shadow-lg min-h-screen relative overflow-hidden">
         <BookingProvider>
+        <ScrollToTop />  
         <Routes>
           <Route path="/" element={<Home />} />
           <Route path="/select-date" element={<HotelSelectDatePage />} />
